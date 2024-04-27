@@ -1,12 +1,17 @@
-echo "Prime numbers btween 1 - 50 are"
+#!/bin/bash
 for ((i=2;i<=50;i++))
 do
-for ((j=2;j<=i/2;j++))
+x=0
+for ((j=2; j<=i/2; j++))
 do
 if [ $((i%j)) == 0 ]
 then
-echo $i
+x=1
 break
 fi
 done
+if [ $x == 0 ]
+then
+echo -n " $i"
+fi
 done
