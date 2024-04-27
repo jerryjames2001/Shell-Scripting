@@ -1,6 +1,6 @@
 echo "Eter the coeffecient for quadratic equation (a,b,c)"
 read a b c
-dis=$((b*b-d*a*c))
+dis=$((b*b-4*a*c))
 if [ $(($dis)) < 0 ]
 then
 echo "Thequadratic has no root"
