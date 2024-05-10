@@ -1,13 +1,14 @@
-echo "Enter numbers by space"
+#!/bin/bash
+echo "Enter number after a space"
 read -a num
-large=${num[0]}
-count="${#num[@]}"
-for i in "${num[@]}"
-do
-if [ $((i > large)) ]
-then
-large=${num[$i]}
-fi
+highest=${num[0]}
+s_h=${num[0]}
+for i in "${num[@]}"; do
+ if (( i > highest )); then
+ s_h=$highest
+ highest=$i
+ elif (( i != highest )) && (( i > s_h )); then
+s_h=$i
+ fi
 done
-count=$((count-1))
-echo "Second largest =${num[count]}"
+echo "Second highest number: $s_h"
